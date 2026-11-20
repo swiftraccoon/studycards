@@ -1,0 +1,97 @@
+title = "Example: Solar System"
+
+[[topics]]
+id = "planets"
+name = "Planets"
+
+[[topics.cards]]
+id = "closest-to-sun"
+question = "Which planet is closest to the Sun?"
+answer = "Mercury"
+wrong = ["Venus", "Earth", "Mars"]
+explanation = "Mercury orbits the Sun at about 0.39 astronomical units, closer than any other planet."
+
+[[topics.cards]]
+id = "largest-planet"
+question = "Which planet is the largest in the Solar System?"
+answer = "Jupiter"
+wrong = ["Saturn", "Neptune", "Earth"]
+explanation = "Jupiter has more than twice the mass of all the other planets combined."
+
+[[topics.cards]]
+id = "red-planet"
+question = "Which planet is known as the Red Planet?"
+answer = "Mars"
+wrong = ["Venus", "Mercury", "Jupiter"]
+explanation = "Iron oxide in the Martian soil gives the surface its reddish colour."
+
+[[topics.cards]]
+id = "hottest-planet"
+question = "Which planet has the hottest surface?"
+answer = "Venus"
+wrong = ["Mercury", "Mars", "Jupiter"]
+explanation = """
+Venus is farther from the Sun than Mercury, but its thick carbon dioxide atmosphere traps heat.
+
+Its surface is hot enough to melt lead."""
+
+[[topics.cards]]
+id = "rings"
+question = "Which planet has the most prominent ring system?"
+answer = "Saturn"
+wrong = ["Uranus", "Jupiter", "Neptune"]
+
+[[topics.cards]]
+id = "on-its-side"
+question = "Which planet rotates tipped almost completely on its side?"
+answer = "Uranus"
+wrong = ["Neptune", "Saturn", "Venus"]
+explanation = "The axis of Uranus is tilted by about 98 degrees."
+
+[[topics.cards]]
+id = "farthest-planet"
+question = "Which planet orbits farthest from the Sun?"
+answer = "Neptune"
+wrong = ["Uranus", "Saturn", "Jupiter"]
+
+[[topics]]
+id = "moons-and-more"
+name = "Moons and more"
+
+[[topics.cards]]
+id = "largest-moon"
+question = "What is the largest moon in the Solar System?"
+answer = "Ganymede"
+wrong = ["Titan", "The Moon", "Europa"]
+explanation = "Ganymede orbits Jupiter and is larger than the planet Mercury."
+
+[[topics.cards]]
+id = "titan"
+question = "Which planet does the moon Titan orbit?"
+answer = "Saturn"
+wrong = ["Jupiter", "Neptune", "Uranus"]
+
+[[topics.cards]]
+id = "earth-moons"
+question = "How many natural satellites does Earth have?"
+answer = "One"
+wrong = ["None", "Two"]
+
+[[topics.cards]]
+id = "former-ninth-planet"
+question = "Which dwarf planet was classified as the ninth planet until 2006?"
+answer = "Pluto"
+wrong = ["Ceres", "Eris", "Makemake"]
+
+[[topics.cards]]
+id = "asteroid-belt"
+question = "Between the orbits of which two planets does the asteroid belt lie?"
+answer = "Mars and Jupiter"
+wrong = ["Earth and Mars", "Jupiter and Saturn", "Venus and Earth"]
+
+[[topics.cards]]
+id = "light-year"
+question = "What does a light-year measure?"
+answer = "Distance"
+wrong = ["Time", "Brightness", "Speed"]
+explanation = "A light-year is the distance light travels in one year, about 9.46 trillion kilometres."

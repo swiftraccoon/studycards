@@ -1,0 +1,6 @@
+/target/
+/web/node_modules/
+.DS_Store
+
+# Study progress changes with every answer; study sets under data/sets/ are meant to be tracked.
+/data/progress/

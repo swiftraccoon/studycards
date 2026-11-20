@@ -1,0 +1,451 @@
+:root {
+  color-scheme: light dark;
+  --page: #f4f5f7;
+  --surface: #ffffff;
+  --text: #1c2126;
+  --muted: #5d6873;
+  --line: #d6dbe0;
+  --accent: #0b6e8e;
+  --accent-text: #ffffff;
+  --right: #2f7d32;
+  --wrong: #b3261e;
+  --seen: #7fc4dc;
+  --radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #14181c;
+    --surface: #1e242a;
+    --text: #e6e9ec;
+    --muted: #9aa5b0;
+    --line: #36404a;
+    --accent: #4fb3d3;
+    --accent-text: #0a1418;
+    --right: #6cc070;
+    --wrong: #f2857d;
+    --seen: #2f6f86;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font: 1rem/1.5 system-ui, sans-serif;
+}
+
+a {
+  color: var(--accent);
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+header.site {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--accent);
+}
+
+header.site a {
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
+header.site a:hover,
+header.site a:focus-visible {
+  text-decoration: underline;
+}
+
+header.site .brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+header.site .crumb::before {
+  content: "› ";
+}
+
+main {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem;
+}
+
+.summary,
+.hint,
+.empty {
+  color: var(--muted);
+}
+
+.error {
+  color: var(--wrong);
+  font-weight: 600;
+}
+
+button,
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--accent-text);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button.quiet {
+  background: transparent;
+  color: var(--accent);
+}
+
+button:focus-visible,
+.button:focus-visible,
+a:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Lists of sets and topics */
+
+ul.sets,
+ul.topics,
+ul.cards,
+ol.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.sets > li {
+  margin: 0 0 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+ul.sets h2 {
+  margin: 0;
+}
+
+ul.sets p {
+  margin: 0.25rem 0 0.5rem;
+}
+
+ul.topics > li,
+ul.cards > li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Forms */
+
+label.field {
+  display: block;
+  margin: 0 0 0.75rem;
+}
+
+label.field span {
+  display: block;
+  font-weight: 600;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+form.row,
+form.create {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+form.row label.field,
+form.create label.field {
+  flex: 1 1 16rem;
+  margin: 0;
+}
+
+form.create {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+label.confirm {
+  flex: 1 1 16rem;
+}
+
+.danger button {
+  border-color: var(--wrong);
+  background: transparent;
+  color: var(--wrong);
+}
+
+section.topic,
+section.danger {
+  margin: 1.5rem 0;
+  padding: 0.25rem 1.25rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+/* Studying */
+
+nav.scopes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+}
+
+nav.scopes a {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  text-decoration: none;
+}
+
+nav.scopes a[aria-current="page"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 48rem) {
+  .columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+section.card,
+aside.stats {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+section.card .topic {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+section.card .question {
+  margin: 0.5rem 0 1rem;
+  font-size: 1.25rem;
+}
+
+section.card .question p {
+  margin: 0 0 0.5rem;
+}
+
+form.answers,
+ol.answers {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+form.answers button.answer,
+ol.answers button.answer,
+ol.answers li.answer {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--page);
+  color: var(--text);
+  text-align: left;
+}
+
+form.answers button.answer:hover,
+ol.answers button.answer:hover {
+  border-color: var(--accent);
+}
+
+.answer .letter {
+  flex: none;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+form.answers button.unknown,
+form.retry button.reveal {
+  background: transparent;
+  color: var(--accent);
+}
+
+/* Both buttons sit 1rem below the answers. The answers of a question share a
+   grid with their button, and the gap of the grid is half of that space. */
+
+form.answers button.unknown {
+  justify-self: start;
+  margin-top: 0.5rem;
+}
+
+form.retry button.reveal {
+  margin-top: 1rem;
+}
+
+/* The selectors for a marked answer name the list, as the rule for every
+   answer above does: a shorter selector would lose to that rule, and the
+   mark would keep the colours of an unmarked answer. */
+
+ol.answers li.answer.right,
+ol.answers li.answer.right .letter {
+  color: var(--right);
+}
+
+ol.answers li.answer.wrong,
+ol.answers li.answer.wrong .letter {
+  color: var(--wrong);
+}
+
+ol.answers li.answer.right {
+  border-color: var(--right);
+  font-weight: 600;
+}
+
+ol.answers li.answer.wrong {
+  border-color: var(--wrong);
+}
+
+ol.answers li.answer.wrong .text {
+  text-decoration: line-through;
+}
+
+details {
+  margin: 1rem 0 0;
+}
+
+summary {
+  cursor: pointer;
+  color: var(--accent);
+}
+
+form.next {
+  margin: 1.25rem 0 0;
+}
+
+form.next button {
+  min-width: 8rem;
+}
+
+/* Progress panel */
+
+aside.stats h2 {
+  margin: 0 0 0.75rem;
+}
+
+dl.totals {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+dl.totals dd {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+dl.totals dt {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+svg.chart {
+  display: block;
+  width: 100%;
+  max-height: 10rem;
+}
+
+svg.chart line {
+  stroke: var(--line);
+}
+
+svg.chart rect.seen {
+  fill: var(--seen);
+}
+
+svg.chart rect.aptitude {
+  fill: var(--accent);
+}
+
+svg.chart text {
+  fill: var(--muted);
+  font-size: 11px;
+}
+
+ol.legend {
+  margin-top: 0.75rem;
+  counter-reset: topic;
+  font-size: 0.9rem;
+}
+
+ol.legend li {
+  counter-increment: topic;
+  padding: 0.2rem 0;
+}
+
+ol.legend li::before {
+  content: counter(topic) ". ";
+  color: var(--muted);
+}

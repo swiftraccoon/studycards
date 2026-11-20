@@ -1,0 +1,7 @@
+# Tests fail by panicking; the panic-related restriction lints apply to shipped code.
+allow-unwrap-in-tests = true
+allow-expect-in-tests = true
+allow-panic-in-tests = true
+allow-indexing-slicing-in-tests = true
+# This is an application: its library target is not a published API.
+avoid-breaking-exported-api = false
